@@ -1,0 +1,18 @@
+<form name="new">
+	<h3>Agregar un nuevo usuario</h3>
+	<div class="row">
+		<div class="col-lg-2 col-md-3 col-sm-3">
+
+			<br>
+			<label>User Name:</label from="user">	<input to="user" type="text" ng-model="userToAdd.userName" required name="">
+				<br>
+				<label>Email :</label>	<input type="email"  ng-model="userToAdd.email" required name="">
+				<br>
+				<label>País :</label>	<input type="text"  ng-model="userToAdd.pais" required name="">
+				<br>
+				<br>
+				<br>
+				<button class="btn btn-success" ng-click="ok()"> Ok</button> <button ng-click="cancel()" class="btn btn-danger"> Cancel</button>
+			</div>
+		</div>
+	</form>

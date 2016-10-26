@@ -1,0 +1,43 @@
+
+
+<div id="content" class="container-fluid fill">
+	<div class="row">
+
+
+		<div class="col-lg-2 col-md-3 col-sm-3">
+			<!-- Placeholder - keep empty -->
+		</div> 
+
+
+			<div>
+				<input type="text" class="form-control" placeholder="Search" ng-model="userSearch">
+			</div>
+	</div>
+	<div class="row"> 
+			<table class="table">
+				<thead>
+					<tr>
+						<th>User Name</th>
+						<th>Email</th>
+						<th>Pais</th>
+						<th>Last Login</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="usuario in main.usuarios | filter:{userName: userSearch} "  ng-class="{ danger : main.getClass(usuario.lastLogin) === 0, warning:  main.getClass(usuario.lastLogin) === 1 }">
+						<td>{{ usuario.userName }}</td>
+						<td>{{ usuario.email }}</td>
+						<td>{{ usuario.pais }}</td>
+						<td ng-class=>{{ usuario.lastLogin | date:"MM/dd/yyyy 'at' h:mma" }}</td>
+						<td>{{ usuario.status  }}</td>
+						<td> <button type="button" ng-click="main.remove($index, usuario)" class="btn btn-danger">Quitar</button></td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="button" ng-click="main.openPopUp()" class="btn btn-success">Agregar</button>
+		</div>
+
+
+	</div>
+</div>
